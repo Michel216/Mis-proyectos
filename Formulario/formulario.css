@@ -1,0 +1,177 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.734);
+    justify-items: center;
+    margin-top: 60px;
+}
+
+.titulo {
+    display: flex;
+    padding-top: 30px;
+    font-size: 60px;
+    justify-content: center;
+    border-color: purple;
+    color: white;
+}
+
+.formulario {
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    border-radius: 30px;
+    width: 400px;
+
+    font-size: 20px;
+    height: auto;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    padding: 0px 50px 30px 50px
+}
+
+select {
+    height: 30px;
+    border: 1px solid purple;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+input {
+    background-color: black;
+    font-size: 20px;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid purple;
+    outline: none;
+    color: white;
+}
+
+input[type="date" ] {
+    color: white;
+background-color: #8a79799c;
+    border: 1px solid purple;
+    margin-bottom: 40px;
+}
+
+input[type="radio" i] {
+    color: white;
+    align-content: center;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background-color: purple;
+    border: 1px solid purple;
+    color: white;
+    font-size: 20px;
+}
+
+.formulario h3 {
+    color: white;
+}
+
+.gen {
+    display: flex;
+    color: white;
+    gap: 3px;
+    justify-items: center;
+}
+
+#enviar {
+    width: 100px;
+
+}
+
+table {
+    border: 2px solid purple;
+    background-color: purple;
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+
+    }
+
+
+    table th {
+        padding: 4px;
+        
+    }
+    .cont_card{
+        display: none;
+    }
+    
+ 
+    @media(max-width: 1050px){
+        .formulario{
+            width: 60%;
+        }
+        table{
+        display: none;}
+  
+        .tg{
+            display: none;
+        }
+    
+        .cont_card {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            margin-top: 10px;
+            padding: 0 2%;
+            gap: 20px;
+        }
+        
+        .card {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+        }
+    }
+    
+    @media(max-width: 900px){
+        .cont_card{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media(max-width: 750px){
+        .formulario{
+            width: 70%;
+        }
+    }
+    
+    @media(max-width: 650px){
+        .formulario{
+            width: 90%;
+        }
+    
+        .cont_card{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+    @media(max-width: 500px){
+        .cont_doc, .cont_gen{
+            flex-direction: column;
+        }
+    
+        .cont_cedula, .cont_ti, .text_genero, .cont_masculino, .cont_femenino{
+            margin-bottom: 10px;
+        }
+    }
+
+
+
+
+
+

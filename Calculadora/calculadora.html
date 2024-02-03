@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./calculadora.css">
+
+</head>
+
+<body>
+    <div class="calculadora">
+        <div class="text">
+        <input id="texto" type="text" placeholder="Introduce el numero"></div>
+        <!-- <input id="texto" type="texto" placeholder="Resultado"> -->
+        <div class="boton">
+            <Button id="numero" onclick="Numero(7)">7</Button>
+            <Button id="numero" onclick="Numero(8)">8</Button>
+            <Button id="numero" onclick="Numero(9)">9</Button>
+            <Button id="borrar" onclick="Borra()">C</Button>
+            <Button id="numero" onclick="Numero(4)">4</Button>
+            <Button id="numero" onclick="Numero(5)">5</Button>
+            <Button id="numero" onclick="Numero(6)">6</Button>
+            <Button id="operacion" onclick="Muestra(`+`), Coloca(`+`)">+</Button>
+            <Button id="numero" onclick="Numero(1)">1</Button>
+            <Button id="numero" onclick="Numero(`2`)">2</Button>
+            <Button id="numero" onclick="Numero(`3`)">3</Button>
+            <Button id="operacion" onclick="Muestra(`-`), Coloca(`-`)">-</Button>
+            <Button id="operacion" onclick="Muestra(`*`), Coloca(`*`)">X</Button>
+            <Button id="numero" onclick="Numero(0)">0</Button>
+            <Button id="operacion" onclick="Muestra(`/`), Coloca(`/`)">/</Button>
+            <Button id="operacion" onclick="Muestra(`=`)">=</Button>
+        </div>
+    </div>
+</body>
+<script>
+    function Numero(value) {
+        document.getElementById("texto").value += value
+    }
+    function Coloca(value) {
+        document.getElementById("texto").value += value
+    }
+
+    function Muestra(operator) {
+        let Calcular = eval(document.getElementById("texto").value)
+        document.getElementById("texto").value = Calcular
+    }
+
+    function Borra() {
+        document.getElementById("texto").value = ""
+    }
+
+
+</script>
+
+</html>

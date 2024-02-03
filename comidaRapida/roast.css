@@ -1,0 +1,1481 @@
+@font-face {
+    font-family: "Noteworthy Bold";
+    src: url("https://db.onlinewebfonts.com/t/f4bc352b52c96ca087093d36bd2396bb.eot");
+    src: url("https://db.onlinewebfonts.com/t/f4bc352b52c96ca087093d36bd2396bb.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/f4bc352b52c96ca087093d36bd2396bb.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/f4bc352b52c96ca087093d36bd2396bb.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/f4bc352b52c96ca087093d36bd2396bb.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/f4bc352b52c96ca087093d36bd2396bb.svg#Noteworthy Bold")format("svg");
+}
+
+
+body {
+    margin: 0;
+    background-color: rgb(215, 215, 180);
+    font-family: "Noteworthy Bold"
+}
+
+.banner {
+    position: fixed;
+
+    width: 100%;
+    top: 0;
+    z-index: 11;
+    margin: 0%;
+}
+
+#imagenBaner {
+    display: flex;
+    flex-direction: row;
+    gap: 6%;
+    justify-content: center;
+
+}
+
+#img1 {
+    width: 350px;
+
+}
+
+.bann {
+    width: 95%;
+    margin-top: 230px;
+
+    margin-left: 5%;
+}
+
+
+.card {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    margin: 0% 10%;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: .5s;
+
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 1px 1px 2px black,
+        0 0 1em blue,
+        0 0 0.2em blue;
+}
+
+
+.whatsapp-link{
+    display: flex;
+    gap: 100px;
+}
+
+.wasa img{
+width: 30%;
+color: green;
+margin-left: 100px;
+margin-top: -9.9px;  
+
+}
+
+
+.numeral{
+    margin-top:-30px;
+    font-size: 20px;
+}
+
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: black;
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+    }
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+    margin-top: -60px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+    text-decoration: none;
+    font-size: 30px;
+   
+ 
+}
+
+.card .back h3 {
+    font-size: 40px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-top: -10%;
+}
+
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+/* Estilo del botón para abrir la ventana emergente */
+.abrir-ventana {
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    border-radius: 5px;
+    justify-content: flex-end;
+    top: 200px;
+    z-index: 60;
+}
+
+#img-abrir {
+    position: fixed;
+    z-index: 1000;
+    bottom: 70px;
+    right: 0;
+    top: 140px;
+    width: 90px;
+
+}
+
+/* Estilo del fondo oscuro */
+
+.ban-menu {
+    width: 50%;
+}
+
+/* Estilo de la ventana emergente */
+#miVentana:target {
+    position: absolute;
+    display: block;
+    width: 600px;
+
+    margin-top: 0;
+    z-index: 110;
+    float: right;
+
+    margin-top: 0%;
+    background-color: rgb(230, 145, 33);
+    transition: ease-in-out .4s;
+    overflow-y: auto;
+    /* Habilitar el scroll vertical */
+
+    /* Ajustar la altura al viewport */
+
+    cursor: grab;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #00000000 #00000000;
+}
+
+/* WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00000000;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+
+.fondo2 {
+    position: absolute;
+
+    width: 100%;
+    height: 150%;
+    margin-top: 0;
+    background-color: #00000000;
+}
+
+
+.ventana-emergente {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0px;
+
+    z-index: 150;
+
+
+}
+
+
+/* Estilo del botón para cerrar la ventana emergente */
+.cerrar-ventana {
+    position: absolute;
+    top: 10px;
+    right: 60px;
+
+
+}
+
+#img-cerrar {
+    position: absolute;
+    width: 50px;
+    filter: invert(100%);
+}
+
+#img-menu {
+    position: absolute;
+    top: 275px;
+    right: 150px;
+    border-radius: 200px;
+    border: 10px solid rgb(230, 145, 33) ;
+    margin-bottom: 0;
+    width: 50%;
+
+}
+
+.redes {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.redes img {
+    margin-top: 150px;
+    width: 80px;
+    padding-bottom: 60px;
+}
+
+.contacto hr {
+    display: flex;
+    border: none;
+    border-top: 3px dotted rgb(255, 255, 255);
+    width: 90%;
+    padding: 10px;
+}
+
+.tex {
+    display: flex;
+    justify-content: right;
+    font-size: 35px;
+    padding-right: 30px;
+
+
+}
+
+.tex img {
+    display: flex;
+    width: 50px;
+    padding-left: 40px;
+    align-items: center;
+    justify-content: center;
+
+}
+/* 
+.menuCompleto, #boca{
+    margin-top: 20px;
+}
+
+ */
+
+
+input#abrir-cerrar {
+    visibility: hidden;
+    /* position: absolute; */
+    transform: perspective(180deg);
+    transition: all .3s ease;
+
+}
+
+.fondo {
+    position: fixed;
+    background-color: black;
+    width: 7.5vw;
+    height: 400%;
+    top: 0;
+    z-index: 10;
+}
+
+
+
+label[for="abrir-cerrar"] {
+    position: fixed;
+    background-color: #000000;
+    color: #fff;
+    /* width: 1%; */
+    height: 10%;
+    top: 14vw;
+    filter: brightness(150%) hue-rotate(140deg);
+    transform: perspective(180deg);
+    transition: all .3s ease;
+}
+
+.desplegable {
+    display: flex;
+    filter: opacity(100%);
+    width: 2.5vw;
+    margin: 0px 0px 0px 10px;
+    transform: perspective(180deg);
+    transition: all .3s ease;
+
+}
+
+
+#sidebar {
+    margin-top: 5.5%;
+    width: 7vw;
+    z-index: 700;
+    transition: ease-in-out .4s;
+    overflow-y: auto;
+    /* Habilitar el scroll vertical */
+    height: 120vw;
+
+    /* Ajustar la altura al viewport */
+    overflow-y: scroll hidden;
+    cursor: grab;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #00000000 #00000000;
+}
+
+/* WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00000000;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+
+
+input#abrir-cerrar:checked ~ #sidebar {
+    width: 18vw;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+
+    /* ancho de todo sidebar */
+}
+
+
+
+
+.sidebar {
+    position: fixed;
+    /* height: 100%; */
+    /* top: 10; */
+    left: 0;
+    background-color: #000000;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    /* Habilitar el scroll vertical */
+    cursor: grab;
+    top: 13vw;
+}
+
+#menu_opciones {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    /* Alinear el contenido al extremo derecho */
+}
+
+#menu_opciones p {
+    margin: 0;
+    text-align: right;
+    /* Alinear el texto a la derecha */
+    margin-right: 10px;
+    /* Ajustar el margen derecho para separar el texto de la imagen */
+    order: 1;
+}
+
+#menu_opciones .opciones {
+    padding: 5px;
+    /* Ajustar el margen izquierdo para separar la imagen del texto */
+    order: 2;
+
+}
+.menuCompleto, #boca{
+
+        margin-top: 230px; 
+    }
+
+.sidebar a:focus {
+    color: #fff;
+
+}
+
+
+.opciones {
+
+    /* margin: 10px 4px; */
+    width: 90px;
+    filter: invert(100);
+    transition: 1s;
+    margin: 4px 0px 20px 10px;
+}
+
+/* .opciones:active {
+    background: orange;
+    transform: scale(0.5);
+
+} */
+
+
+
+#menu_opciones {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1.5vw;
+}
+
+#imgn {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.menu1 {
+
+    display: flex;
+    justify-content: center;
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.hamburguesa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 0%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu2 {
+    margin: 4%;
+    margin-left: 12%;
+}
+
+.perros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* margin-top: -8%; */
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu3 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.deleite {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu4 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.salchipapa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu5 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.sandwich {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu6 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.pollo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu7 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.parrilla {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu8 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.infantil {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu9 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.bebidas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu10 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.adicionales {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.menu11 {
+    margin: 8%;
+    margin-left: 12%;
+}
+
+.cumpleaños {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: -8%;
+    gap: 3%;
+    justify-content: center;
+}
+
+.informacion {
+    width: 50%;
+    height: 100%;
+}
+
+#menu_opciones {
+    margin-top: 9%;
+    margin-left: 10px;
+}
+
+#otro {
+    transition: 1s;
+    animation: alternate vibrar .5s;
+    box-shadow: 4px 0px 0px black, 0 0 2em orange, 0 0 .5em orange;
+}
+
+
+#menu_opciones:active #otro {
+    animation: vibrar 0.5s;
+
+
+}
+
+
+@keyframes vibrar {
+    0% {
+        transform: rotate(30deg);
+    }
+
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-30deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(30deg);
+    }
+
+}
+
+
+
+.titulo {
+    /* margin-bottom: 100px; */
+    margin-left: 40%;
+    font-size: 80px;
+    background: -webkit-linear-gradient(yellow, red);
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: absolute;
+}
+
+@media screen and (min-width: 1880px) {
+    .opciones {
+        width: 4vw;
+    }
+
+    #sidebar {
+        width: 6vw;
+        margin-top: 7vw;
+    }
+    
+
+    .fondo {
+        width: 7%;
+
+    }
+
+    .desplegable {
+        width: 3vw;
+
+    }
+
+    .card {
+        width: 480px;
+        height: 350px;
+        margin: 10px;
+        font-size: 3vw;
+    }
+
+
+
+    .hamburguesa {
+        display: grid;
+        justify-content: center;
+    }
+
+
+
+    .perros {
+        display: grid;
+        justify-content: center;
+    }
+
+
+    .deleite {
+        display: grid;
+        justify-content: center;
+    }
+
+
+    .salchipapa {
+        display: grid;
+        justify-content: center;
+    }
+
+    .sandwich {
+        display: grid;
+        justify-content: center;
+    }
+
+    .pollo {
+        display: grid;
+        justify-content: center;
+    }
+
+    .parrilla {
+        display: grid;
+        justify-content: center;
+    }
+
+    .infantil {
+        display: grid;
+        justify-content: center;
+    }
+
+    .bebidas {
+        display: grid;
+        justify-content: center;
+    }
+
+    .adicionales {
+        display: grid;
+        justify-content: center;
+    }
+
+    .cumpleaños {
+        display: grid;
+        justify-content: center;
+    }
+  
+}
+
+@media screen and (max-width: 1600px) {
+    .titulo {
+        font-size: 5vw;
+
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 25vw;
+
+    }
+    #menu_opciones {
+        text-decoration: none;
+        color: aliceblue;
+        font-size: 1.5vw;
+    }
+    
+    .imagen {
+        width: 1vw;
+
+    }
+
+    .opciones {
+        width: 6vw;
+    }
+
+    #sidebar {
+        width: 8vw;
+        margin-top: 16vw;
+
+    }
+
+    .desplegable {
+        margin-top: 9vw;
+        width: 3vw;
+    }
+
+    .fondo {
+        /* position: absolute;
+        background-color: black; */
+        width: 8vw;
+        margin-top: 0;
+        /* z-index: 10; */
+    }
+
+    .card {
+        position: relative;
+        width: 400px;
+        height: 350px;
+        margin: 20px;
+
+    }
+
+
+    .hamburguesa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+
+
+    .perros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+
+    .deleite {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+
+    .salchipapa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .sandwich {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .pollo {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .parrilla {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .infantil {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .bebidas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .adicionales {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+
+    .cumpleaños {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0%;
+        justify-content: center;
+    }
+    .tit{
+        margin-top: 200px;
+    }
+    #boca{
+        margin-top: 230px; 
+     
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 35vw;
+        height: 100%;
+    }
+    #menu_opciones {
+        font-size: 3vw;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .opciones {
+        width: 10vw;
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 25vw;
+    
+    }
+
+    #sidebar {
+        width: 15vw;
+        margin-top: 35vw;
+
+    }
+
+    .desplegable {
+        margin-top: 20vw;
+        width: 5.5vw;
+    }
+
+    .fondo {
+        /* position: absolute;
+            background-color: black; */
+        width: 15.5vw;
+        /* margin-top: 0; */
+        /* z-index: 10; */
+    }
+
+
+
+    .menu1 {
+        margin: 8%;
+        margin-left: 12%;
+
+    }
+
+    .card {
+        position: relative;
+        width: 500px;
+        height: 360px;
+        margin: 20px;
+
+
+    }
+
+    .hamburguesa {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+
+    }
+
+    .menu2 {
+        margin: 3%;
+        margin-left: 25%;
+    }
+
+    .perros {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+
+    }
+
+    .menu3 {
+        margin: 8%;
+        margin-left: 25%;
+
+    }
+
+    .deleite {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .menu4 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .salchipapa {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .menu5 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .sandwich {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .menu6 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .pollo {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .menu7 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .parrilla {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        justify-content: center;
+    }
+
+    .menu8 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .infantil {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .menu9 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .bebidas {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+        justify-content: center;
+    }
+
+    .menu10 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .adicionales {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .menu11 {
+        margin: 8%;
+        margin-left: 25%;
+    }
+
+    .cumpleaños {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+    }
+
+    .titulo {
+        text-align: center;
+        font-size: 5vw;
+        margin-left: 37%;
+
+    }
+
+
+    #miVentana:target,
+    .ventana-emergente {
+        width: 60%;
+        right: 0%;
+    }
+
+    .tit{
+        margin-top: 180px;
+    }
+    #boca{
+        margin-top: 210px; 
+    }
+
+    .bann{
+        width: 100%;
+        /* margin: 0; */
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 45vw;
+        height: 100%;
+    }
+    #menu_opciones {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 862px) {
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 25vw;
+    
+    }
+    #miVentana:target,
+    .ventana-emergente {
+
+        right: 0;
+        font-size: 1vw;
+    }
+
+    #img-menu {
+        position: absolute;
+        top: 30vw;
+        right: 15vw;
+
+    }
+
+    .tex {
+        font-size: 3vw;
+    }
+
+    .redes img {
+        width: 10vw;
+    }
+
+    .card {
+        position: relative;
+        width: 420px;
+        height: 360px;
+        margin-left: 15vw;
+    }
+    .tit{
+        margin-top: 180px;
+    }
+    #boca{
+        margin-top: 210px; 
+    }
+    .bann{
+        width: 100%;
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 45vw;
+        height: 100%;
+    }
+    #menu_opciones {
+        font-size: 4vw;
+    }
+    
+}
+
+@media screen and (max-width: 670px) {
+
+    #miVentana:target,
+    .ventana-emergente {
+        right: 0;
+        font-size: 1vw;
+    }
+
+    .opciones {
+        width: 8.5vw;
+    }
+
+    #sidebar {
+        width: 15%;
+        margin-top: 37vw;
+        margin-left: -1%;
+    }
+
+    .desplegable {
+        margin-top: 25vw;
+    }
+
+    #img-menu {
+        position: absolute;
+        top: 28vw;
+        right: 18vw;
+    }
+
+    .card {
+        position: relative;
+        width: 420px;
+        height: 360px;
+        margin-left: 4vw;
+    }
+    .tit{
+        margin-top: 220px;
+    }
+    #boca{
+        margin-top: 230px; 
+    }
+    .bann{
+        width: 100%;
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 60vw;
+        height: 100%;
+    }
+    #menu_opciones {
+        font-size: 4vw;
+    }
+    
+}
+
+@media screen and (max-width: 578px) {
+
+    #miVentana:target,
+    .ventana-emergente {
+        width: 70%;
+        right: 0;
+        font-size: 1vw;
+    }
+
+    #img-menu {
+        position: absolute;
+        top: 32vw;
+        right: 18vw;
+
+    }
+
+    .tex {
+        font-size: 6vw;
+    }
+
+    .redes img {
+        width: 10vw;
+        margin-top: 70px;
+    }
+
+    .tex {
+        font-size: 4vw;
+    }
+
+    .redes img {
+        width: 10vw;
+    }
+
+.bann{
+    width: 100%;
+}
+
+    #sidebar {
+        width: 13%;
+        margin-top: 40vw;
+        margin-left: -1%;
+    }
+
+    .desplegable {
+        margin-top: 160px;
+
+    }
+    #menu_opciones {
+        text-decoration: none;
+        color: aliceblue;
+        font-size: 1.5vw;
+    }
+    #menu_opciones {
+
+        font-size: 4vw;
+    }
+    .card {
+        position: relative;
+        width: 420px;
+        height: 360px;
+        margin-left: 1vw;
+    }
+    .hamburguesa .card{
+        margin-left: 15vw;
+    }
+    
+    .tit{
+        margin-top: 220px;
+    }
+    #boca{
+        margin-top: 230px; 
+    }
+    .bann{
+        width: 100%;
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 50vw;
+        height: 100%;
+    }
+    #menu_opciones {
+
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 510px) {
+
+    .opciones {
+        width: 7, 5dvh;
+
+    }
+
+    #sidebar {
+        width: 13%;
+        margin-top: 50vw;
+        margin-left: -1%;
+    }
+
+    .desplegable {
+        margin-top: 170px;
+
+    }
+
+    #miVentana:target,
+    .ventana-emergente {
+
+        right: 0;
+        font-size: 1vw;
+    }
+
+    .card {
+
+        width: 400px;
+        height: 390px;
+        margin-left: 1vw;
+    }
+
+    .hamburguesa .card{
+        margin-left: 15vw;
+    }
+    
+    .tit{
+        margin-top: 220px;
+    }
+    #boca{
+        margin-top: 230px; 
+    }
+    .bann{
+        width: 100%;
+    }
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 50vw;
+    height: 100%;
+    }
+    #menu_opciones {
+
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 460px) {
+.hamburguesa .card{
+    margin-left: 15vw;
+}
+
+.tit{
+    margin-top: 220px;
+}
+#boca{
+    margin-top: 230px; 
+}
+    .card {
+        width: 309px;
+        height: 360px;
+        /* margin-left: 1vw; */
+        position: relative;
+        justify-content: center;
+    }
+
+    #sidebar {
+        width: 15%;
+        margin-top: 250px;
+        margin-left: -5%;
+    }
+
+    .desplegable {
+        margin-top: 200px;
+        margin-left: -4%;
+        width: 20px;
+    }
+
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 55vw;
+    height: 100%;
+    }
+    #menu_opciones {
+
+        font-size: 4vw;
+    }
+
+#miVentana:target,
+.ventana-emergente {
+    right: 0;
+    font-size: 1vw;
+}
+.bann{
+    width: 100%;
+}
+}
+
+
+@media screen and (max-width: 375px) {
+    .card {
+        width: 285px;
+        height: 400px;
+        margin-left: 15vw;
+    }
+
+    .card .back p {
+        margin-top: 0%;
+        letter-spacing: 0.2px;
+        font-size: 5.5vw;
+    }
+
+    #sidebar {
+        width: 20%;
+        margin-top: 70vw;
+        margin-left: -8%;
+    }
+
+    .desplegable {
+        margin-top: 200px;
+        margin-left: -10%;
+        width: 20px;
+    }
+    .bann{
+        width: 100%;
+    }
+    
+    input#abrir-cerrar:checked ~ #sidebar {
+        width: 65vw;
+    height: 100%;
+    }
+    #menu_opciones {
+
+        font-size: 5vw;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+    #img1 {
+
+        width: 345px;
+        margin-right: 1000px;
+        margin-left: -40%;
+    }
+    .bann{
+        width: 100%;
+    }
+    
+
+    
+}
