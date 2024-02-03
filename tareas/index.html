@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.js">
+</head>
+
+<body>
+    <div class="tarea">
+        <input id="texto" type="text" placeholder="Introduce tu tarea">
+        <input id="fecha" type="date">
+        <input id="prioridad" type="checkbox">
+        <button id="guardar" onclick="envia(), Agregar()">+</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="info">Tarea</th>
+                <th class="info">Fecha</th>
+                <th class="info">Prioridad</th>
+                <th class="orden">Ordenar</th>
+            </tr>
+        </thead>
+        <tbody id="tabla">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    data = [
+    ]
+    function envia() {
+
+    
+    let datos = {}
+    var Checked = document.getElementById('prioridad').checked;
+    if (Checked) {
+        prioridad = "Alta"
+    } else  {
+        prioridad = "Baja"
+    }
+    datos = {
+        tex: document.getElementById("texto").value,
+        date: document.getElementById("fecha").value,
+        priori: prioridad
+    }
+    console.log(datos)
+    data.push(datos);
+    console.log(data);
+}
+
+    function Agregar() {
+        let frag = document.createDocumentFragment();
+        data.forEach((item, index) => {
+
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+
+            td1.textContent = item.tex;
+            td2.textContent = item.date;
+            td3.textContent = item.priori;
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            frag.appendChild(tr);
+        });
+        let tabla = document.getElementById("tabla");
+        tabla.innerHTML = "";
+        tabla.appendChild(frag);
+    }
+</script>
+
+</html>
