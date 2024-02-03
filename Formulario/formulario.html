@@ -68,18 +68,18 @@
 
 </div>
 
-<div id="cont_cards" class="cont_card"><div class="card">
-    <h2>ee ee</h2>
+<div id="tarjeta" class="cont_card"><div class="card">
+<!--     <h2>ee ee</h2>
     <p><strong>Tipo de documento: </strong> otro</p>
     <p><strong>Número de documento: </strong> ee</p>
     <p><strong>Género: </strong> Femenino</p>
     <p><strong>Fecha de nacimiento: </strong> 2004-10-12</p>
     <p><strong>Teléfono: </strong> 1234567891</p>
-    <p><strong>Correo: </strong> ee@gmail.com</p>
+    <p><strong>Correo: </strong> ee@gmail.com</p> -->
 </div></div>
     <script>
         let data = [];
-
+let tarjeta[];
 function enviar() {
     // Verificar si algún campo está vacío
     if (
@@ -166,6 +166,14 @@ function imprimir() {
         tr.appendChild(td7);
         tr.appendChild(td8);
         frag.appendChild(tr);
+        tarjeta.push(`Nombre:${item.nombre}`) 
+tarjeta.push(`Apellido:${item.apellido}`)
+tarjeta.push(`Tipo de documento:${item.documento}`)
+tarjeta.push(`Número de documento:${item.numero}`)
+tarjeta.push(`Género:${item.genero}`)
+tarjeta.push(`Fecha de nacimiento:${item.fecha}`)
+tarjeta.push(`Teléfono:${item.telefono}`)
+tarjeta.push(`Correo:${item.correo}`)
     });
 
     let tabla = document.getElementById("tabla");
