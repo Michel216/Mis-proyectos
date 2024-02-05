@@ -140,6 +140,11 @@ body {
     margin-left: -10%;
 }
 
+.btn-flechaDerecha img {
+    width: 38%;
+    height: 1%;
+}
+
 .Derecha b {
     height: auto;
     width: 20%;
@@ -267,4 +272,144 @@ body {
 #btn-derecha h {
     color: rgb(0, 0, 173);
     align-items: center;
+}
+
+
+@media screen and (max-width: 800px) {
+    .imagen {
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .productos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2%;
+        margin-top: 3%;
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+
+    .btn-precio {
+        width: 40%;
+        height: 13%;
+    }
+
+    .botones1 {
+        display: grid;
+        grid-template-columns: 10% 10% 20% 12%;
+        gap: 1%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botonesAbajo {
+        grid-template-columns: 4% 20% 10%;
+        gap: 23%;
+        margin-top: 30%;
+        margin-left: 5%;
+    }
+
+    #texto {
+        margin-bottom: 50%;
+        margin-top: 0%;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .botones1 {
+        display: grid;
+        grid-template-columns: 15% 17% 20% 15%;
+        gap: 1%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagen {
+        margin-top: 30%
+    }
+
+    .btn-flechaDerecha img {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #Titulo {
+        margin-top: 0%;
+        font-size: 100%;
+        letter-spacing: 3px;
+    }
+
+    .Arriba {
+        display: grid;
+        grid-template-columns: repeat(5, 14.8%);
+        gap: 25%;
+
+    }
+
+    .imagen {
+        margin-top: 45%
+    }
+
+    .btn-precio {
+        width: 80%;
+        height: 10%;
+        margin-bottom: 10%;
+    }
+
+    .botonesAbajo {
+        grid-template-columns: 4% 20% 10%;
+        gap: 20%;
+        margin-top: 30%;
+        margin-left: 5%;
+    }
+
+    .btn-flechaDerecha img {
+        width: 80%;
+        height: 2%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .productos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1%;
+    }
+
+    .botones1 {
+        display: grid;
+        grid-template-columns: 15% 17% 20% 18%;
+        gap: 1%;
+    }
+
+    .imagen {
+        margin-top: 70%
+    }
+
+    .botonesAbajo {
+        display: grid;
+        grid-template-columns: 15% 40%;
+        margin-left: 0;
+        margin-top: 90%;
+        margin-bottom: 10%;
+    }
+
+    .derecha3 {
+        display: flex;
+        justify-content: center;
+        margin-left: 220%;
+    }
+
+    .btn-flechaDerecha img {
+        width: 130%;
+        height: 3%;
+    }
+
+    #texto {
+        margin-bottom: 50%;
+        margin-top: 0%;
+    }
 }
