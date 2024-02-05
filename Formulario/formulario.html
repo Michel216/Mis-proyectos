@@ -11,17 +11,20 @@
 <body>
     <div class="formulario">
         <div class="titulo">Formulario</div><br><br>
-        <div> <h3>Nombre</h3>
+        <div>
+            <h3>Nombre</h3>
             <br><input id="nombre" type="text" placeholder=" Escribe tu Nombre"><br>
         </div>
-        <div> <h3></h3>Apellido </h3>
+        <div>
+            <h3></h3>Apellido </h3>
             <br> <input id="Apellido" type="text" placeholder=" Escribe tu Apellido"><br>
         </div>
         <h3>Selecciona tu genero</h3><br>
         <div class="gen"> <label><input id="Hombre" type="radio" name="Masculino" value="Masculino"> Masculino</label>
             <br><label><input type="radio" id="Mujer" name="Masculino" value="Femenino"> Femenino</label><br>
         </div><br>
-        <div><h3>Telefono</h3>
+        <div>
+            <h3>Telefono</h3>
             <br> <input id="telefono" type="text" placeholder="Escribe tu Telefono"><br>
         </div>
         <h3>Tipo de documento</h3>
@@ -30,13 +33,16 @@
             <option value="C.C">Cedula de ciudadania</option>
             <option value="T.I">Tarjeta de identidad</option>
         </select><br><br>
-        <div><h3>Numero de documento </h3>
+        <div>
+            <h3>Numero de documento </h3>
             <br> <input id="numero" type="text" placeholder="Escribe tu documento"><br>
         </div>
-        <div> <h3>Correo Electronico</h3>
+        <div>
+            <h3>Correo Electronico</h3>
             <br><input id="correo" type="email" placeholder="Escribe tu Correo "><br>
         </div>
-        <div><h3>Fecha de nacimiento</h3> <br>
+        <div>
+            <h3>Fecha de nacimiento</h3> <br>
             <input id="fecha" type="date">
         </div>
 
@@ -48,132 +54,140 @@
     </div>
     <div class="contTabla">
 
-    <table>
-    <thead>
-        <tr>
-            <th class="tg-header">Nombre</th>
-            <th class="tg-header">Apellido</th>
-            <th class="tg-header">Tipo documento</th>
-            <th class="tg-header">Número documento</th>
-            <th class="tg-header">Genero</th>
-            <th class="tg-header">Fecha nacimiento</th>
-            <th class="tg-header">Telefono</th>
-            <th class="tg-header">Correo</th>
-        </tr>
-    </thead>
-    <tbody id="tabla">
+        <table>
+            <thead>
+                <tr>
+                    <th class="tg-header">Nombre</th>
+                    <th class="tg-header">Apellido</th>
+                    <th class="tg-header">Tipo documento</th>
+                    <th class="tg-header">Número documento</th>
+                    <th class="tg-header">Genero</th>
+                    <th class="tg-header">Fecha nacimiento</th>
+                    <th class="tg-header">Telefono</th>
+                    <th class="tg-header">Correo</th>
+                </tr>
+            </thead>
+            <tbody id="tabla">
 
-    </tbody>
-</table>
+            </tbody>
+        </table>
 
-</div>
+    </div>
 
-<div id="tarjeta" class="cont_card"><div class="card">
-    <h2>ee ee</h2>
-    <p><strong>Tipo de documento: </strong> otro</p>
-    <p><strong>Número de documento: </strong> ee</p>
-    <p><strong>Género: </strong> Femenino</p>
-    <p><strong>Fecha de nacimiento: </strong> 2004-10-12</p>
-    <p><strong>Teléfono: </strong> 1234567891</p>
-    <p><strong>Correo: </strong> ee@gmail.com</p>
-</div></div>
+    <div id="tarjeta" class="tarjeta">
+    </div>
     <script>
         let data = [];
-function enviar() {
-    // Verificar si algún campo está vacío
-    if (
-        document.getElementById("nombre").value === "" ||
-        document.getElementById("Apellido").value === "" ||
-        (document.getElementById("Hombre").checked === false && document.getElementById("Mujer").checked === false) ||
-        document.getElementById("telefono").value === "" ||
-        document.getElementById("documento").value === "" ||
-        document.getElementById("numero").value === "" ||
-        document.getElementById("correo").value === "" ||
-        document.getElementById("fecha").value === ""
-    ) {
-        alert("Por favor, completa todos los campos del formulario.");
-        return; 
-    }
+        function enviar() {
+            // Verificar si algún campo está vacío
+            if (
+                document.getElementById("nombre").value === "" ||
+                document.getElementById("Apellido").value === "" ||
+                (document.getElementById("Hombre").checked === false && document.getElementById("Mujer").checked === false) ||
+                document.getElementById("telefono").value === "" ||
+                document.getElementById("documento").value === "" ||
+                document.getElementById("numero").value === "" ||
+                document.getElementById("correo").value === "" ||
+                document.getElementById("fecha").value === ""
+            ) {
+                alert("Por favor, completa todos los campos del formulario.");
+                return;
+            }
 
-    let datos = {};
-    let gene = "";
+            let datos = {};
+            let gene = "";
 
-    if (document.getElementById("Hombre").checked) {
-        gene = "Hombre";
-    } else if (document.getElementById("Mujer").checked) {
-        gene = "Mujer";
-    }
+            if (document.getElementById("Hombre").checked) {
+                gene = "Hombre";
+            } else if (document.getElementById("Mujer").checked) {
+                gene = "Mujer";
+            }
 
-    datos = {
-        nombre: document.getElementById("nombre").value,
-        apellido: document.getElementById("Apellido").value,
-        genero: gene,
-        telefono: document.getElementById("telefono").value,
-        documento: document.getElementById("documento").value,
-        numero: document.getElementById("numero").value,
-        correo: document.getElementById("correo").value,
-        fecha: document.getElementById("fecha").value
-    };
+            datos = {
+                nombre: document.getElementById("nombre").value,
+                apellido: document.getElementById("Apellido").value,
+                genero: gene,
+                telefono: document.getElementById("telefono").value,
+                documento: document.getElementById("documento").value,
+                numero: document.getElementById("numero").value,
+                correo: document.getElementById("correo").value,
+                fecha: document.getElementById("fecha").value
+            };
 
-    console.log(datos);
-    data.push(datos);
-    console.log(data);
-    alert("Información guardada con éxito");
+            console.log(datos);
+            data.push(datos);
+            console.log(data);
+            alert("Información guardada con éxito");
 
-  // Limpiar el formulario
-  document.getElementById("nombre").value = "";
-    document.getElementById("Apellido").value = "";
-    document.getElementById("Hombre").checked = false;
-    document.getElementById("Mujer").checked = false;
-    document.getElementById("telefono").value = "";
-    document.getElementById("documento").value = "";
-    document.getElementById("numero").value = "";
-    document.getElementById("correo").value = "";
-    document.getElementById("fecha").value = "";
+            // Limpiar el formulario
+            document.getElementById("nombre").value = "";
+            document.getElementById("Apellido").value = "";
+            document.getElementById("Hombre").checked = false;
+            document.getElementById("Mujer").checked = false;
+            document.getElementById("telefono").value = "";
+            document.getElementById("documento").value = "";
+            document.getElementById("numero").value = "";
+            document.getElementById("correo").value = "";
+            document.getElementById("fecha").value = "";
+        }
 
-}
+        function imprimir() {
+            let Res_Tabla = document.getElementById("tarjeta");
+            Res_Tabla.innerHTML = "";
 
-function imprimir() {
-    let frag = document.createDocumentFragment();
+            data.forEach((item, index) => {
+                let tarj = document.createElement("div");
+                tarj.className = "tarj";
+                tarj.innerHTML = `
+                <h2><strong>Nombre: </strong>${item.nombre}</h2>
+                <h2><strong>Apellido: </strong>${item.apellido}</h2>
+                <p><strong>Tipo de documento: </strong> ${item.documento}</p>
+                <p><strong>Número de documento: </strong> ${item.numero}</p>
+                <p><strong>Género: </strong> ${item.genero}</p>
+                <p><strong>Fecha de nacimiento: </strong> ${item.fecha}</p>
+                <p><strong>Teléfono: </strong> ${item.telefono}</p>
+                <p><strong>Correo: </strong> ${item.correo}</p>
+            `;
+                Res_Tabla.appendChild(tarj);
+            })
+            let frag = document.createDocumentFragment();
 
-    data.forEach((item, index) => {
-        let tr = document.createElement("tr");
-        let td1 = document.createElement("td");
-        let td2 = document.createElement("td");
-        let td3 = document.createElement("td");
-        let td4 = document.createElement("td");
-        let td5 = document.createElement("td");
-        let td6 = document.createElement("td");
-        let td7 = document.createElement("td");
-        let td8 = document.createElement("td");
+            data.forEach((item, index) => {
+                let tr = document.createElement("tr");
+                let td1 = document.createElement("td");
+                let td2 = document.createElement("td");
+                let td3 = document.createElement("td");
+                let td4 = document.createElement("td");
+                let td5 = document.createElement("td");
+                let td6 = document.createElement("td");
+                let td7 = document.createElement("td");
+                let td8 = document.createElement("td");
 
-        td1.textContent = item.nombre;
-        td2.textContent = item.apellido;
-        td3.textContent = item.documento;
-        td4.textContent = item.numero;
-        td5.textContent = item.genero;
-        td6.textContent = item.fecha;
-        td7.textContent = item.telefono;
-        td8.textContent = item.correo;
+                td1.textContent = item.nombre;
+                td2.textContent = item.apellido;
+                td3.textContent = item.documento;
+                td4.textContent = item.numero;
+                td5.textContent = item.genero;
+                td6.textContent = item.fecha;
+                td7.textContent = item.telefono;
+                td8.textContent = item.correo;
 
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4);
-        tr.appendChild(td5);
-        tr.appendChild(td6);
-        tr.appendChild(td7);
-        tr.appendChild(td8);
-        frag.appendChild(tr);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                tr.appendChild(td4);
+                tr.appendChild(td5);
+                tr.appendChild(td6);
+                tr.appendChild(td7);
+                tr.appendChild(td8);
+                frag.appendChild(tr);
 
-    });
+            });
 
-    let tabla = document.getElementById("tabla");
-    tabla.innerHTML = "";
-    tabla.appendChild(frag);
-
-
-}
+            let tabla = document.getElementById("tabla");
+            tabla.innerHTML = "";
+            tabla.appendChild(frag);
+        }
     </script>
 </body>
 
