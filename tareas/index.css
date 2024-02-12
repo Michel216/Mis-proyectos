@@ -170,6 +170,7 @@ table tbody {
 
 @media screen and (max-width:430px) {
     .tarea {
+        top: 32%;
         position: absolute;
         left: 21%;
     }
@@ -182,6 +183,7 @@ table tbody {
     .tabla {
         position: absolute;
         left: 21%;
+         top: 41%;
     }
 
     table thead tr th {
