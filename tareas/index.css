@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+}
+
+#fondo {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.tarea {
+    position: absolute;
+    z-index: 2;
+    top: 30%;
+    left: 30%;
+    display: flex;
+    gap: 10px;
+    font-size: 15%;
+}
+
+.fila {
+    display: flex;
+    gap: 10px;
+}
+
+.boton {
+    display: flex;
+    gap: 10px;
+}
+
+.tarea input {
+    font-size: 20px;
+}
+
+input [checkbox] {
+    width: 50px;
+}
+
+.tabla {
+    position: absolute;
+    z-index: 2;
+    top: 43%;
+    left: 28%;
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+table.tabla {
+    table-layout: fixed;
+    width: 50%;
+}
+
+table thead tr th {
+    border: 2px solid black;
+    background-color: #a18262;
+    margin-top: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+button {
+    border: 2px solid;
+    border-color: #a18262;
+    background-color: #a18262;
+    color: white;
+    font-size: 20px;
+}
+
+table tbody {
+    align-content: center;
+    text-align: center;
+    padding: 4px;
+    border: 2px solid black;
+    justify-content: center;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+.control.ok input {
+    border: 2px solid;
+    border-color: #a18262;
+}
+
+.control.falla input {
+    border: 2px solid;
+    border-color: #fe5f55;
+}
+
+.control p {
+    visibility: hidden;
+    position: absolute;
+    font-size: 16px;
+    text-align: center;
+}
+
+.control.falla p {
+    visibility: visible;
+    color: rgb(255, 0, 0);
+}
+
+@media screen and (max-width:1800px) {
+    .tarea {
+        position: absolute;
+        z-index: 2;
+        top: 30%;
+        left: 25%;
+        display: flex;
+        gap: 10px;
+        font-size: 10%;
+    }
+}
+
+@media screen and (max-width:1020px) {
+    .tarea {
+        position: absolute;
+        z-index: 2;
+        top: 30%;
+        left: 23%;
+        display: flex;
+        gap: 8px;
+        font-size: 10%;
+    }
+}
+
+@media screen and (max-width:950px) {
+    .tarea {
+        position: absolute;
+        z-index: 2;
+        top: 22%;
+        left: 28%;
+        display: grid;
+        gap: 18px;
+        font-size: 8%;
+    }
+
+    table thead tr th {
+        font-size: 22px;
+
+    }
+}
+
+@media screen and (max-width:690px) {
+    .tabla {
+        position: absolute;
+        left: 25%;
+    }
+
+    table.tabla {
+        table-layout: fixed;
+        width: 55%;
+    }
+}
+
+@media screen and (max-width:530px) {
+    .tabla {
+        position: absolute;
+        left: 22%;
+    }
+
+    table thead tr th {
+        font-size: 18px;
+    }
+
+    table.tabla {
+        table-layout: fixed;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:430px) {
+    .tarea {
+        position: absolute;
+        left: 21%;
+    }
+
+    .tarea input,
+    button {
+        font-size: 17px;
+    }
+
+    .tabla {
+        position: absolute;
+        left: 21%;
+    }
+
+    table thead tr th {
+        font-size: 17px;
+    }
+}

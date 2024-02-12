@@ -5,76 +5,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.js">
+    <link rel="stylesheet" href="index.css">
 </head>
+<html>
 
 <body>
-    <div class="tarea">
-        <input id="texto" type="text" placeholder="Introduce tu tarea">
-        <input id="fecha" type="date">
-        <input id="prioridad" type="checkbox">
-        <button id="guardar" onclick="envia(), Agregar()">+</button>
+    <img id="fondo"
+        src="https://image.freepik.com/free-photo/top-view-blank-paper-page-wooden-background-office-desk_44344-928.jpg"
+        alt="">
+    <div class="tarea" id="tar">
+        <div class="control">
+            <input id="texto" type="text" placeholder="Introduce tu tarea" required>
+            <p></p>
+        </div>
+        <div class="fila">
+            <div class="control">
+                <input id="fecha" type="date" required>
+                <p></p>
+            </div>
+            <input id="prioridad" type="checkbox">
+        </div>
+        <div class="boton"><button id="guardar" onclick="envia()">+</button>
+            <button id="Orden" onclick="alternarOrden()">Ordenar</button>
+        </div>
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th class="info">Tarea</th>
-                <th class="info">Fecha</th>
-                <th class="info">Prioridad</th>
-                <button class="orden">Ordenar</button>
-            </tr>
-        </thead>
-        <tbody id="tabla">
-
-        </tbody>
-    </table>
-</body>
-<script>
-    data = [
-    ]
-    function envia() {
-
-    
-    let datos = {}
-    var Checked = document.getElementById('prioridad').checked;
-    if (Checked) {
-        prioridad = "Alta"
-    } else  {
-        prioridad = "Baja"
-    }
-    datos = {
-        tex: document.getElementById("texto").value,
-        date: document.getElementById("fecha").value,
-        priori: prioridad
-    }
-    console.log(datos)
-    data.push(datos);
-    console.log(data);
-}
-
-    function Agregar() {
-        let frag = document.createDocumentFragment();
-        data.forEach((item, index) => {
-
-            let tr = document.createElement("tr");
-            let td1 = document.createElement("td");
-            let td2 = document.createElement("td");
-            let td3 = document.createElement("td");
-
-            td1.textContent = item.tex;
-            td2.textContent = item.date;
-            td3.textContent = item.priori;
-
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-            frag.appendChild(tr);
+    <div>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th class="info">Tarea</th>
+                    <th class="info">Fecha</th>
+                    <th class="info">Prioridad</th>
+                </tr>
+            </thead>
+            <tbody id="tabla"></tbody>
+        </table>
+    </div>
+    <script>
+        let tex, fec;
+        window.addEventListener('load', () => {
+            tex = document.getElementById('texto');
+            fec = document.getElementById('fecha');
+            const tar = document.querySelector('#tar');
+            document.getElementById('guardar').addEventListener('click', (e) => {
+                e.preventDefault();
+                validaCampos();
+            });
         });
-        let tabla = document.getElementById("tabla");
-        tabla.innerHTML = "";
-        tabla.appendChild(frag);
-    }
+
+        const validaFalla = (input, msje) => {
+            const control = input.parentElement;
+            const aviso = control.querySelector('p');
+            aviso.innerText = msje;
+            control.className = 'control falla';
+        };
+
+        const validaOk = (input) => {
+            const control = input.parentElement;
+            control.className = 'control ok';
+            const aviso = control.querySelector('p');
+            aviso.innerText = '';
+        };
+
+        const data = [];
+
+        function envia() {
+            const texValor = tex.value.trim();
+            const fecValor = fec.value.trim();
+
+            if (!texValor) {
+                validaFalla(tex, '*Campo de tarea vacío*');
+
+            } else {
+                validaOk(tex);
+            }
+
+            if (!fecValor) {
+                validaFalla(fec, '*Campo de fecha vacío*');
+
+            } else {
+                validaOk(fec);
+            }
+
+            if (
+                document.getElementById("texto").value === "" ||
+                document.getElementById("fecha").value === ""
+            ) return;
+
+            let datos = {};
+            const Checked = document.getElementById('prioridad').checked;
+            const prioridad = Checked ? "Alta" : "Baja";
+            datos = {
+                tex: tex.value,
+                date: fec.value,
+                priori: prioridad
+            };
+            data.push(datos);
+            Agregar();
+
+            document.getElementById("texto").value = ""; // Limpia el campo de texto
+            document.getElementById("fecha").value = ""; // Lim
+            document.getElementById("prioridad").checked = false;
+        }
+
+        function Agregar() {
+            const frag = document.createDocumentFragment();
+            data.forEach((item, index) => {
+                const tr = document.createElement("tr");
+                const td1 = document.createElement("td");
+                const td2 = document.createElement("td");
+                const td3 = document.createElement("td");
+
+                td1.textContent = item.tex;
+                td2.textContent = item.date;
+                td3.textContent = item.priori;
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+                frag.appendChild(tr);
+            });
+            const tabla = document.getElementById("tabla");
+            tabla.innerHTML = "";
+            tabla.appendChild(frag);
+        }
+
+        let ordenAscendente = true;
+
+        function alternarOrden() {
+            ordenAscendente = !ordenAscendente;
+            if (ordenAscendente) {
+                ordenarPorPrioridadAscendente();
+            } else {
+                ordenarPorPrioridadDescendente();
+            }
+        }
+
+        function ordenarPorPrioridadAscendente() {
+            data.sort((a, b) => {
+                const prioridadA = a.priori === "Alta" ? 1 : 0;
+                const prioridadB = b.priori === "Alta" ? 1 : 0;
+                return prioridadA - prioridadB;
+            });
+            Agregar();
+        }
+
+        function ordenarPorPrioridadDescendente() {
+            data.sort((a, b) => {
+                const prioridadA = a.priori === "Alta" ? 1 : 0;
+                const prioridadB = b.priori === "Alta" ? 1 : 0;
+                return prioridadB - prioridadA;
+            });
+            Agregar();
+        }
 </script>
 
 </html>
