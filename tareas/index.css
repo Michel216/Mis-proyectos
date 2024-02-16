@@ -195,7 +195,7 @@ table tbody {
 
 @media screen and (max-width:430px) {
     .tarea {
-        top: 22%;
+        top: 24%;
         position: absolute;
         left: 21%;
     }
@@ -212,7 +212,7 @@ table tbody {
     }
 
     table thead tr th {
-        font-size: 3.4vw;
+        font-size: 3.2vw;
     }
     .tarea input{
         font-size: 3.4vw;
@@ -223,6 +223,6 @@ table tbody {
         }
         table tbody {
 
-            font-size: 3.4vw;
+            font-size: 3.2vw;
         }
 }
