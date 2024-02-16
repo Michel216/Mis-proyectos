@@ -207,7 +207,7 @@ table tbody {
 
     .tabla {
         position: absolute;
-        left: 21%;
+        left: 20%;
          top: 46%;
     }
 
@@ -227,6 +227,6 @@ table tbody {
         }
       table.tabla {
         table-layout: fixed;
-        width: 62%;
+        width: 64%;
     }
 }
