@@ -119,16 +119,7 @@
             console.log(data);
             alert("Información guardada con éxito");
 
-            // Limpiar el formulario
-            document.getElementById("nombre").value = "";
-            document.getElementById("Apellido").value = "";
-            document.getElementById("Hombre").checked = false;
-            document.getElementById("Mujer").checked = false;
-            document.getElementById("telefono").value = "";
-            document.getElementById("documento").value = "";
-            document.getElementById("numero").value = "";
-            document.getElementById("correo").value = "";
-            document.getElementById("fecha").value = "";
+            limpiar()
         }
 
         function imprimir() {
@@ -187,6 +178,19 @@
             let tabla = document.getElementById("tabla");
             tabla.innerHTML = "";
             tabla.appendChild(frag);
+        }
+
+        function limpiar(){
+              // Limpiar el formulario
+              document.getElementById("nombre").value = "";
+            document.getElementById("Apellido").value = "";
+            document.getElementById("Hombre").checked = false;
+            document.getElementById("Mujer").checked = false;
+            document.getElementById("telefono").value = "";
+            document.getElementById("documento").value = "";
+            document.getElementById("numero").value = "";
+            document.getElementById("correo").value = "";
+            document.getElementById("fecha").value = "";
         }
     </script>
 </body>
