@@ -270,7 +270,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 4px;
-    margin-left: 18%;
+    margin-left: 16%;
   }
 }
 
@@ -291,7 +291,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 4px;
-    widht: 100%
+    widht: 110%
   }
 }
 
