@@ -195,7 +195,7 @@ table tbody {
 
 @media screen and (max-width:430px) {
     .tarea {
-        top: 24%;
+        top: 28%;
         position: absolute;
         left: 21%;
     }
@@ -208,7 +208,7 @@ table tbody {
     .tabla {
         position: absolute;
         left: 21%;
-         top: 42%;
+         top: 46%;
     }
 
     table thead tr th {
@@ -225,4 +225,8 @@ table tbody {
 
             font-size: 3.2vw;
         }
+      table.tabla {
+        table-layout: fixed;
+        width: 62%;
+    }
 }
