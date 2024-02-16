@@ -3,15 +3,16 @@
 }
 
 #fondo {
-    position: absolute;
     width: 100%;
     height: 100vh;
+    position: absolute;
+    filter: invert(54%) sepia(53%) saturate(281%) hue-rotate(350deg) brightness(88%) contrast(81%);
 }
+
 
 .tarea {
     position: absolute;
     z-index: 2;
-    top: 30%;
     left: 30%;
     display: flex;
     gap: 10px;
@@ -40,7 +41,7 @@ input [checkbox] {
     position: absolute;
     z-index: 2;
     top: 43%;
-    left: 28%;
+    left: 15%;
     width: 100%;
     border-collapse: collapse;
     border: none;
@@ -49,7 +50,8 @@ input [checkbox] {
 
 table.tabla {
     table-layout: fixed;
-    width: 50%;
+    width: 70%;
+    margin-left: 2%;
 }
 
 table thead tr th {
@@ -109,8 +111,9 @@ table tbody {
         left: 25%;
         display: flex;
         gap: 10px;
-        font-size: 10%;
+        /* font-size: 10%; */
     }
+
 }
 
 @media screen and (max-width:1020px) {
@@ -118,22 +121,32 @@ table tbody {
         position: absolute;
         z-index: 2;
         top: 30%;
-        left: 23%;
+        left: 18%;
         display: flex;
         gap: 8px;
-        font-size: 10%;
+
     }
 }
 
 @media screen and (max-width:950px) {
-    .tarea {
+    /* .tarea {
         position: absolute;
         z-index: 2;
         top: 22%;
-        left: 28%;
+        left: 22%;
         display: grid;
         gap: 18px;
         font-size: 2.6vw;
+    } */
+
+    .tarea {
+        position: absolute;
+        z-index: 2;
+        top: 30%;
+        left: 12%;
+        display: flex;
+        gap: 8px;
+
     }
 
     table thead tr th {
@@ -141,92 +154,98 @@ table tbody {
 
     }
 
-    .tarea input{
+    .tarea input {
+        font-size: 2.3vw;
+    }
+
+    button {
+
+        font-size: 2.3vw;
+    }
+
+    table tbody {
+
         font-size: 2.6vw;
     }
-    button{
-
-            font-size: 2.6vw;
-        }
-        table tbody {
-
-            font-size: 2.6vw;
-        }
 }
 
 @media screen and (max-width:690px) {
     .tabla {
         position: absolute;
-        left: 25%;
+        left: 12%;
     }
 
-    table.tabla {
-        table-layout: fixed;
-        width: 55%;
+    .tarea input {
+        font-size: 2.6vw;
+    }
+
+    button {
+
+        font-size: 2.6vw;
     }
 }
 
 @media screen and (max-width:530px) {
-    .tabla {
+    .tarea {
+        top: 18%;
         position: absolute;
-        left: 22%;
+        left: 21%;
+        display: grid;
+        gap: 18px;
     }
 
     table thead tr th {
-        font-size: 3.3vw;
+        font-size: 4vw;
     }
 
-    table.tabla {
-        table-layout: fixed;
-        width: 60%;
+    .tarea input {
+        font-size: 4.5vw;
     }
-    .tarea input{
-        font-size:3.3vw;
+
+    button {
+        font-size: 4.5vw;
     }
-    button{
 
-            font-size:3.3vw;
-        }
-        table tbody {
-
-            font-size: 3.3vw;
-        }
+    table tbody {
+        font-size: 3.4vw;
+    }
 }
 
 @media screen and (max-width:430px) {
     .tarea {
-        top: 28%;
+        top: 18%;
         position: absolute;
         left: 21%;
-    }
-
-    .tarea input,
-    button {
-        font-size: 17px;
+        display: grid;
+        gap: 18px;
     }
 
     .tabla {
         position: absolute;
-        left: 20%;
-         top: 46%;
+        left: 8%;
+        top: 42%;
+    }
+
+    table.tabla {
+        table-layout: fixed;
+        width: 80%;
+        margin-left: 2%;
     }
 
     table thead tr th {
-        font-size: 3.2vw;
-    }
-    .tarea input{
-        font-size: 3.4vw;
-    }
-    button{
+        font-size: 4.3vw;
 
-            font-size: 3.4vw;
-        }
-        table tbody {
+    }
 
-            font-size: 3.2vw;
-        }
-      table.tabla {
-        table-layout: fixed;
-        width: 64%;
+    .tarea input {
+        font-size: 5vw;
+    }
+
+    button {
+        font-size: 5vw;
+    }
+
+    table tbody {
+        font-size: 4vw;
     }
 }
