@@ -44,6 +44,7 @@ input [checkbox] {
     width: 100%;
     border-collapse: collapse;
     border: none;
+
 }
 
 table.tabla {
@@ -52,11 +53,12 @@ table.tabla {
 }
 
 table thead tr th {
-    border: 2px solid black;
+    border: 1px solid black;
     background-color: #a18262;
     margin-top: 10px;
     color: white;
     font-size: 30px;
+
 }
 
 button {
@@ -71,7 +73,7 @@ table tbody {
     align-content: center;
     text-align: center;
     padding: 4px;
-    border: 2px solid black;
+    border: 1px solid black;
     justify-content: center;
     border-collapse: collapse;
     font-size: 20px;
@@ -131,13 +133,25 @@ table tbody {
         left: 28%;
         display: grid;
         gap: 18px;
-        font-size: 8%;
+        font-size: 2.6vw;
     }
 
     table thead tr th {
-        font-size: 22px;
+        font-size: 2.6vw;
 
     }
+
+    .tarea input{
+        font-size: 2.6vw;
+    }
+    button{
+
+            font-size: 2.6vw;
+        }
+        table tbody {
+
+            font-size: 2.6vw;
+        }
 }
 
 @media screen and (max-width:690px) {
@@ -159,18 +173,29 @@ table tbody {
     }
 
     table thead tr th {
-        font-size: 18px;
+        font-size: 3.3vw;
     }
 
     table.tabla {
         table-layout: fixed;
         width: 60%;
     }
+    .tarea input{
+        font-size:3.3vw;
+    }
+    button{
+
+            font-size:3.3vw;
+        }
+        table tbody {
+
+            font-size: 3.3vw;
+        }
 }
 
 @media screen and (max-width:430px) {
     .tarea {
-        top: 31%;
+        top: 22%;
         position: absolute;
         left: 21%;
     }
@@ -187,6 +212,17 @@ table tbody {
     }
 
     table thead tr th {
-        font-size: 17px;
+        font-size: 3.4vw;
     }
+    .tarea input{
+        font-size: 3.4vw;
+    }
+    button{
+
+            font-size: 3.4vw;
+        }
+        table tbody {
+
+            font-size: 3.4vw;
+        }
 }
