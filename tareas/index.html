@@ -36,6 +36,7 @@
                     <th class="info">Tarea</th>
                     <th class="info">Fecha</th>
                     <th class="info">Prioridad</th>
+                    <th class="info">Opciones</th>
                 </tr>
             </thead>
             <tbody id="tabla"></tbody>
@@ -70,6 +71,7 @@
         const data = [];
 
         function envia() {
+       
             const texValor = tex.value.trim();
             const fecValor = fec.value.trim();
 
@@ -103,6 +105,7 @@
             data.push(datos);
             Agregar();
 
+
             document.getElementById("texto").value = ""; // Limpia el campo de texto
             document.getElementById("fecha").value = ""; // Lim
             document.getElementById("prioridad").checked = false;
@@ -115,15 +118,23 @@
                 const td1 = document.createElement("td");
                 const td2 = document.createElement("td");
                 const td3 = document.createElement("td");
+                const celda = document.createElement("td");
+                let eliminar = document.createElement("button")
 
                 td1.textContent = item.tex;
                 td2.textContent = item.date;
                 td3.textContent = item.priori;
+                eliminar.textContent = "❌"
+                eliminar.addEventListener("click", () => {
+            eliminarFila(index);
+        });
 
                 tr.appendChild(td1);
                 tr.appendChild(td2);
                 tr.appendChild(td3);
+                tr.appendChild(celda); 
                 frag.appendChild(tr);
+                celda.appendChild(eliminar)
             });
             const tabla = document.getElementById("tabla");
             tabla.innerHTML = "";
@@ -158,6 +169,12 @@
             });
             Agregar();
         }
+
+      
+        function eliminarFila(index) {
+    data.splice(index, 1);
+    Agregar();
+}
 </script>
 
 </html>
