@@ -104,7 +104,7 @@ function eliminarProductoCarrito(id) {
     if (index !== -1) {
         const producto = productosComprados[index];
         let priceReduce = parseFloat(producto.precio) ;
-        producto.cantidad--;
+        producto.cantidad-=1;
         totalCarrito -= priceReduce;
         if (producto.cantidad <= 0) {
             productosComprados.splice(index, 1);
