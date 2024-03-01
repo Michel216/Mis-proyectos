@@ -106,14 +106,12 @@ function eliminarProductoCarrito(id) {
         let priceReduce = parseFloat(producto.precio) ;
         producto.cantidad--;
         Math.abs(producto.cantidad)
-        totalCarrito = priceReduce ;
+        totalCarrito -= priceReduce;
         if (producto.cantidad <= 0) {
             productosComprados.splice(index, 1);
         }
-        if (totalCarrito < 0) {
-            totalCarrito = 0;
-        }
-        cantidadProductosComprados = productosComprados.reduce((total, producto) => total - producto.cantidad, 0);
+      
+        cantidadProductosComprados = productosComprados.reduce((total, producto) => producto.cantidad - total , 0);
         actualizarCarrito();
     }
 }
