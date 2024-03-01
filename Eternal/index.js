@@ -111,7 +111,7 @@ function eliminarProductoCarrito(id) {
         }
         if (totalCarrito < 0) {
             totalCarrito = 0;
-            totalCarrito.toFixed(3)
+            // totalCarrito.toFixed(3)
         }
         cantidadProductosComprados = productosComprados.reduce((total, producto) => producto.cantidad - total , 0);
         actualizarCarrito();
