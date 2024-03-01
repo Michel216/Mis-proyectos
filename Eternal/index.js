@@ -109,7 +109,7 @@ function eliminarProductoCarrito(id) {
     a = a * -1;
 }
         totalCarrito = priceReduce ;
-        if (producto.cantidad >= 0) {
+        if (producto.cantidad <= 0) {
             productosComprados.splice(index, 1);
         }
         if (totalCarrito < 0) {
