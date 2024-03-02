@@ -110,6 +110,10 @@ function eliminarProductoCarrito(id) {
         if (producto.cantidad <= 0) {
             productosComprados.splice(index, 1);
         }
+            if (cantidadProductosComprados <= 0) {
+            Total=0
+        }
+
         cantidadProductosComprados = productosComprados.reduce((total, producto) =>   total -(-producto.cantidad), 0);
         actualizarCarrito();
     }
