@@ -103,17 +103,14 @@ function eliminarProductoCarrito(id) {
     const index = productosComprados.findIndex(producto => producto.id === id);
     if (index !== -1) {
         const producto = productosComprados[index];
-        let priceReduce = parseFloat(producto.precio) ;
+        let priceReduce = producto.precio;
         producto.cantidad--;
         totalCarrito -= priceReduce;
+      
         if (producto.cantidad <= 0) {
             productosComprados.splice(index, 1);
         }
-        if (totalCarrito < 0) {
-            totalCarrito = 0;
-            // totalCarrito.toFixed(3)
-        }
-        cantidadProductosComprados = productosComprados.reduce((total, producto) => producto.cantidad - total , 0);
+        cantidadProductosComprados = productosComprados.reduce((total, producto) =>   total -(-producto.cantidad), 0);
         actualizarCarrito();
     }
 }
