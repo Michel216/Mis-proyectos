@@ -1,21 +1,21 @@
 // Definición de los aretes
 let aretes = [
-    { id: 1, img1: "./IMG/ar8.png", nombre: "Set De 1 Par De Candongas 1 Par De Topos y 1 Earcuff", precio: 49.900 },
-    { id: 2, img1: "./IMG/ar2.png", nombre: "Arete 2 En 1 Corazón", precio: 29.900 },
-    { id: 3, img1: "./IMG/ar1.png", nombre: "Set topos y earcuff de perlas", precio: 44.900 },
-    { id: 4, img1: "./IMG/ar3.png", nombre: "Arete Solitario Sol", precio: 44.900 },
-    { id: 5, img1: "./IMG/ar4.png", nombre: "Set Arete Cuff 2 en 1", precio: 44.900 },
-    { id: 6, img1: "./IMG/ar5.png", nombre: "Set De 1 Par De Topos Y 1 Earcuff Mariposas", precio: 39.900 },
-    { id: 7, img1: "./IMG/ar6.png", nombre: "Topos Maxi Corazón", precio: 34.900 },
-    { id: 8, img1: "./IMG/ar7.png", nombre: "Set De 1 Par De Topos Y 1 Earcuff", precio: 29.900 },
-    { id: 9, img1: "./IMG/ar9.png", nombre: "Set De 2 Pares De Topos Y 1 Earcuff", precio: 44.900 },
-    { id: 10, img1: "./IMG/ar10.png", nombre: "Topitos Minicora Mayo", precio: 26.000 },
-    { id: 11, img1: "./IMG/ar11.png", nombre: "Aretes Triangulos Circus", precio: 63.000 },
-    { id: 12, img1: "./IMG/ar12.png", nombre: "Aretes Paz Acero", precio: 44.000 },
-    { id: 13, img1: "./IMG/ar13.png", nombre: "Aretes Negros Milan", precio: 63.000 },
+    { id: 1, img1: "./IMG/ar8.png", nombre: "Set De 1 Par De Candongas 1 Par De Topos y 1 Earcuff", precio: 49.909 },
+    { id: 2, img1: "./IMG/ar2.png", nombre: "Arete 2 En 1 Corazón", precio: 29.999 },
+    { id: 3, img1: "./IMG/ar1.png", nombre: "Set topos y earcuff de perlas", precio: 44.999 },
+    { id: 4, img1: "./IMG/ar3.png", nombre: "Arete Solitario Sol", precio: 44.999 },
+    { id: 5, img1: "./IMG/ar4.png", nombre: "Set Arete Cuff 2 en 1", precio: 44.999 },
+    { id: 6, img1: "./IMG/ar5.png", nombre: "Set De 1 Par De Topos Y 1 Earcuff Mariposas", precio: 39.999 },
+    { id: 7, img1: "./IMG/ar6.png", nombre: "Topos Maxi Corazón", precio: 34.999 },
+    { id: 8, img1: "./IMG/ar7.png", nombre: "Set De 1 Par De Topos Y 1 Earcuff", precio: 29.999 },
+    { id: 9, img1: "./IMG/ar9.png", nombre: "Set De 2 Pares De Topos Y 1 Earcuff", precio: 44.999 },
+    { id: 10, img1: "./IMG/ar10.png", nombre: "Topitos Minicora Mayo", precio: 26.999 },
+    { id: 11, img1: "./IMG/ar11.png", nombre: "Aretes Triangulos Circus", precio: 63.999 },
+    { id: 12, img1: "./IMG/ar12.png", nombre: "Aretes Paz Acero", precio: 44.999 },
+    { id: 13, img1: "./IMG/ar13.png", nombre: "Aretes Negros Milan", precio: 63.999 },
     { id: 14, img1: "./IMG/ar14.png", nombre: "Aretes Stars Elsa", precio: 45.999 },
-    { id: 15, img1: "./IMG/ar15.png", nombre: "Aretes Ocre Tefani", precio: 63.000 },
-    { id: 16, img1: "./IMG/ar16.png", nombre: "Aretes Corazon Chic", precio: 36.000 },
+    { id: 15, img1: "./IMG/ar15.png", nombre: "Aretes Ocre Tefani", precio: 63.689 },
+    { id: 16, img1: "./IMG/ar16.png", nombre: "Aretes Corazon Chic", precio: 36.999 },
 ];
 
 
@@ -53,7 +53,7 @@ function cargarProductos() {
                     <h3 class="text_nombre">${item.nombre}</h3>
                 </div>
                 <div class="cont_precio">
-                <h4 class="text_precio">$${item.precio.toFixed(3)}</h4>
+                <h4 class="text_precio">$${item.precio.toLocaleString()}</h4>
                 </div>
                 <div class="cont_boton">
                     <button class="btn" data-id="${item.id}">Agregar al carrito</button>
@@ -106,20 +106,29 @@ function eliminarProductoCarrito(id) {
         let priceReduce = producto.precio;
         producto.cantidad--;
         totalCarrito -= priceReduce;
-      
+
         if (producto.cantidad <= 0) {
             productosComprados.splice(index, 1);
         }
-        //     if (cantidadProductosComprados <= 0) {
-        //     Total=0
-        // }
+        if (cantidadProductosComprados <= 0) {
+            totalCarrito = 0;
+        }
 
-        cantidadProductosComprados = productosComprados.reduce((total, producto) =>   total -(-producto.cantidad), 0);
+        cantidadProductosComprados = productosComprados.reduce((total, producto) => total - (-producto.cantidad), 0);
         actualizarCarrito();
     }
 }
 
-// Función para actualizar el carrito en el DOM
+function eliminarTodosProductos() {
+    productosComprados = [];
+    totalCarrito = 0;
+    cantidadProductosComprados = 0;
+    actualizarCarrito();
+}
+
+const btnVaciarCarrito = document.getElementById('vaciar-carrito');
+btnVaciarCarrito.addEventListener('click', eliminarTodosProductos);
+
 function actualizarCarrito() {
     contenedorCarrito.innerHTML = '';
     productosComprados.forEach(producto => {
@@ -131,7 +140,7 @@ function actualizarCarrito() {
             </div>
             <div class="cont_info_carrito">
                 <h4>${producto.nombre}</h4> 
-                <h4>$${producto.precio.toFixed(3)}</h4> 
+                <h4>$${producto.precio.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 3 })}</h4> 
                 <h5>Cantidad: ${producto.cantidad}</h5>
             </div>
             <div class="cont_boton_carrito">
@@ -147,7 +156,7 @@ function actualizarCarrito() {
         });
         contenedorCarrito.appendChild(fila);
     });
-    precioTotal.textContent = `Total: $${totalCarrito.toFixed(3)}`;
+    precioTotal.textContent = `Total: $${totalCarrito.toLocaleString('es-CO', { minimumFractionDigits: 0, maximumFractionDigits: 3 })}`;
     cantidadProductos.textContent = cantidadProductosComprados;
 }
 
