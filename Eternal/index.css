@@ -99,6 +99,14 @@ button {
     border-radius: 10PX;
     border: 0px;
 }
+#vaciar-carrito{
+    background-color: #b66d83c6;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    color: white;
+    font-size: 130%;
+}
 
 #carrito {
     position: relative;
